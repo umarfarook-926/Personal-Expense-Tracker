@@ -1,0 +1,61 @@
+### Register a new user
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "password123",
+  "name": "John Doe",
+  "gender": "male"
+}
+
+### User Login
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "password123"
+}
+
+### Add a new transaction
+POST http://localhost:3000/transactions/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwidXNlcl9pZCI6MSwiaWF0IjoxNzI5NjE0Nzg3fQ.jucOLefTcaGhWor70xJMSgkGp87uEFWhoMwzWVNLBmk
+Content-Type: application/json
+
+{
+  "type": "income",
+  "category": "salary",
+  "amount": 2000,
+  "date": "2024-10-01",
+  "description": "October salary"
+}
+
+### Get all transactions
+GET http://localhost:3000/transactions/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwidXNlcl9pZCI6MSwiaWF0IjoxNzI5NjE0Nzg3fQ.jucOLefTcaGhWor70xJMSgkGp87uEFWhoMwzWVNLBmk
+
+### Get transaction by ID
+GET http://localhost:3000/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwidXNlcl9pZCI6MSwiaWF0IjoxNzI5NjE0Nzg3fQ.jucOLefTcaGhWor70xJMSgkGp87uEFWhoMwzWVNLBmk
+
+### Update transaction by ID
+PUT http://localhost:3000/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwidXNlcl9pZCI6MSwiaWF0IjoxNzI5NjE0Nzg3fQ.jucOLefTcaGhWor70xJMSgkGp87uEFWhoMwzWVNLBmk
+Content-Type: application/json
+
+{
+  "type": "expense",
+  "category": "groceries",
+  "amount": 100,
+  "date": "2024-10-02",
+  "description": "Grocery shopping"
+}
+
+### Delete transaction by ID
+DELETE http://localhost:3000/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwidXNlcl9pZCI6MSwiaWF0IjoxNzI5NjE0Nzg3fQ.jucOLefTcaGhWor70xJMSgkGp87uEFWhoMwzWVNLBmk
+
+### Get transaction summary
+GET http://localhost:3000/summary
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwidXNlcl9pZCI6MSwiaWF0IjoxNzI5NjE0Nzg3fQ.jucOLefTcaGhWor70xJMSgkGp87uEFWhoMwzWVNLBmk
